@@ -5,7 +5,7 @@ namespace AveSystems\SonataTestUtils;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Трейт для упрощения проверки флэш-сообщений Sonata на странице.
+ * Trait to make it easier to check Sonata flash messages on a page.
  *
  * @method void assertGreaterThan(int $expected, $actual, string $message = '')
  * @method void assertTrue($condition, string $message = '')
@@ -18,7 +18,7 @@ use Symfony\Component\DomCrawler\Crawler;
 trait SonataAdminFlashMessagesTrait
 {
     /**
-     * Позволяет проверить текст "успешного" флэш-сообшения в респонсе.
+     * Allows you to check the text of a "successful" flash message in responsive.
      *
      * @param string  $message
      * @param Crawler $crawler
@@ -48,7 +48,7 @@ trait SonataAdminFlashMessagesTrait
     }
 
     /**
-     * Позволяет проверить текст "неуспешного" флэш-сообшения в респонсе.
+     * Allows you to check the text of the "unsuccessful" flash message in the responsive.
      *
      * @param string  $error
      * @param Crawler $crawler
@@ -78,7 +78,7 @@ trait SonataAdminFlashMessagesTrait
     }
 
     /**
-     * Проверяет количество неуспешных флэш-сообщений в респонсе.
+     * Checks the number of unsuccessful flash messages in the responsive.
      *
      * @param int     $count
      * @param Crawler $crawler
@@ -92,7 +92,7 @@ trait SonataAdminFlashMessagesTrait
     }
 
     /**
-     * Позволяет проверить текст "предупреждающего" флэш-сообшения в респонсе.
+     * Allows you to check the text of the "warning" flash message in the responsive.
      *
      * @param string  $expectedMessage
      * @param Crawler $crawler
@@ -106,7 +106,7 @@ trait SonataAdminFlashMessagesTrait
         $this->assertGreaterThan(
             0,
             $nodes->count(),
-            'Сообщения c предупреждениями отсутствуют на странице!'
+            'No warning messages on page!'
         );
 
         $matched = false;
@@ -117,13 +117,13 @@ trait SonataAdminFlashMessagesTrait
         }
         $this->assertTrue(
             $matched,
-            'Предупреждающие флэш-сообщения не содержат текст "'
+            'Flash alert messages do not contain text "'
             .$expectedMessage.'".'
         );
     }
 
     /**
-     * Поиск флэш сообщений с ошибками.
+     * Search for flash messages with errors.
      *
      * @param Crawler $crawler
      *
@@ -136,7 +136,7 @@ trait SonataAdminFlashMessagesTrait
     }
 
     /**
-     * Поиск успешных флэш сообщений.
+     * Search for successful flash messages.
      *
      * @param Crawler $crawler
      *
@@ -149,7 +149,7 @@ trait SonataAdminFlashMessagesTrait
     }
 
     /**
-     * Поиск флэш сообщений с предупреждениями.
+     * Search flash messages with warnings.
      *
      * @param Crawler $crawler
      *
