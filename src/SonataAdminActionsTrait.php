@@ -5,9 +5,9 @@ namespace AveSystems\SonataTestUtils;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Нужен для упрощения проверки наличия пунктов в меню "Действия",
- * оформленных в стиле "SonataAdminBundle".
- * Должен использоваться в тестах, наследованных от "TestCase".
+ * It is needed to simplify the check for the presence of items in the "Actions" menu,
+ * designed in the "SonataAdminBundle" style.
+ * Must be used in tests inherited from "TestCase".
  *
  * @method void assertCount(int $expectedCount, $haystack, string $message = '')
  *
@@ -16,8 +16,8 @@ use Symfony\Component\DomCrawler\Crawler;
 trait SonataAdminActionsTrait
 {
     /**
-     * Проверяет, что на странице списка присутствует кнопка, соответствующая
-     * переданному действию.
+     * Checks that the list page contains a button corresponding to
+     * passed to action.
      *
      * @param string  $actionTitle
      * @param Crawler $crawler
@@ -36,8 +36,8 @@ trait SonataAdminActionsTrait
     }
 
     /**
-     * Проверяет, что на странице списка не присутствует кнопка, соответствующая
-     * переданному действию.
+     * Checks that the list page does not have a button corresponding to
+     * passed to action.
      *
      * @param string  $actionTitle
      * @param Crawler $crawler
@@ -56,7 +56,7 @@ trait SonataAdminActionsTrait
     }
 
     /**
-     * Возвращает XPath, соответствующий действию на стандартной странице списка
+     * Returns the XPath corresponding to the action on the standard list page
      * Sonata Admin.
      *
      * @param string $actionTitle
