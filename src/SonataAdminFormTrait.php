@@ -8,8 +8,8 @@ use PHPUnit\Framework\Constraint\IsEqual;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Нужен для упрощения проверки полей формы, оформленных в стиле
- * "SonataAdminBundle". Должен использоваться в тестах, наследованных от
+ * Needed to simplify validation of styled form fields
+ * "SonataAdminBundle". Should be used in tests inherited from
  * "TestCase".
  *
  * @method void assertCount(int $expectedCount, $haystack, string $message = '')
@@ -27,8 +27,8 @@ use Symfony\Component\DomCrawler\Crawler;
 trait SonataAdminFormTrait
 {
     /**
-     * Проверяет, что содержимое поля ввода формы, найденного по заголовку,
-     * содержит переданное значение.
+     * Checks that the content of a form input field found by title is
+     * contains the passed value.
      *
      * @param string  $expectedInputValue
      * @param string  $label
@@ -40,7 +40,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'Значение в поле ввода "%s" не соответствует ожидаемому',
+            'The value in the input field "%s" does not match what is expected',
             $label
         );
 
@@ -57,8 +57,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что содержимое числового поля ввода формы, найденного по
-     * заголовку, содержит переданное значение.
+     * Checks that the content of a numeric form input field found by
+     * header contains the passed value.
      *
      * @param string  $expectedInputValue
      * @param string  $label
@@ -87,8 +87,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что содержимое поля ввода формы, найденного по заголовку,
-     * содержит переданное значение.
+     * Checks that the content of a form input field found by title is
+     * contains the passed value.
      *
      * @param string  $expectedInputValue
      * @param string  $label
@@ -117,8 +117,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что содержимое поле ввода, найденное по заголовку,
-     * присутствует на форме.
+     * Checks that the content of an input field found by title is
+     * is present on the form.
      *
      * @param string  $label
      * @param Crawler $form
@@ -126,7 +126,7 @@ trait SonataAdminFormTrait
     protected function assertFormTextFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+            'Title field not found "%s"',
             $label
         );
 
