@@ -5,9 +5,9 @@ namespace AveSystems\SonataTestUtils;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Нужен для упрощения проверки содержимого во вкладках в HTML,
- * оформленных в стиле "SonataAdminBundle".
- * Должен использоваться в тестах, наследованных от "TestCase".
+ * Needed to make it easier to check content in tabs in HTML,
+ * designed in the "SonataAdminBundle" style.
+ * Must be used in tests inherited from "TestCase".
  *
  * @method void assertCount(int $expectedCount, $haystack, string $message = '')
  *
@@ -16,13 +16,13 @@ use Symfony\Component\DomCrawler\Crawler;
 trait SonataAdminTabTrait
 {
     /**
-     * Проверяет, что вкладка с заданным именем существует в контейнере.
+     * Checks that a tab with the given name exists in the container.
      *
      * @param string  $tabLabel
-     * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
-     *                               содержащий контейнер с ярлыками
-     *                               вкладок (ul-список) и контейнер с панелями
-     *                               вкладок
+     * @param Crawler $tabsContainer the root node must be a container,
+     *                               containing container with labels
+     *                               tabs (ul-list) and container with panels
+     *                               tabs
      */
     protected function assertTabExists(string $tabLabel, Crawler $tabsContainer)
     {
@@ -31,7 +31,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Проверяет, что вкладка с заданным именем не существует в контейнере.
+     * Checks that the tab with the given name does not exist in the container.
      *
      * @param string  $tabLabel
      * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
@@ -45,7 +45,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Проверяет, что ярлык вкладки с заданным именем существует в контейнере.
+     * Checks that a tab shortcut with the given name exists in the container.
      *
      * @param string  $tabLabel
      * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
@@ -63,7 +63,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Проверяет, что ярлык вкладки с заданным именем не существует в контейнере.
+     * Checks that a tab shortcut with the given name does not exist in the container.
      *
      * @param string  $tabLabel
      * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
@@ -81,8 +81,8 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Проверяет, что панель вкладки с заданным содержимым ярлыка существует
-     * в контейнере.
+     * Checks that the tab bar with the given shortcut content exists
+     * in a container.
      *
      * @param string  $tabLabel
      * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
@@ -102,7 +102,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Возвращает XPath-путь к контейнеру с ярлыками вкладок.
+     * Returns the XPath path to the container with tab labels.
      *
      * @return string
      */
@@ -112,7 +112,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Возвращает XPath-путь к ярлыку вкладки по заданному содержимому.
+     * Returns the XPath path to the tab shortcut for the given content.
      *
      * @param string $tabLabel
      *
@@ -124,9 +124,9 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Возвращает XPath-путь к панели вкладки с заданным идентификатором.
+     * Returns the XPath path to the tab bar with the given identifier.
      *
-     * @param string $tabPaneId идентификатор без предшествующего "#"
+     * @param string $tabPaneId identifier without leading "#"
      *
      * @return string
      */
@@ -137,7 +137,7 @@ trait SonataAdminTabTrait
     }
 
     /**
-     * Возвращает XPath-путь к панели вкладки по содержимому ярлыка.
+     * Returns the XPath path to the tab bar based on the contents of the shortcut.
      *
      * @param string  $tabLabel
      * @param Crawler $tabsContainer корневым узлом должен быть контейнер,
