@@ -32,7 +32,7 @@ trait SonataAdminFlashMessagesTrait
         $this->assertGreaterThan(
             0,
             $nodes->count(),
-            'Успешные сообщения отсутствуют на странице!'
+            'Successful messages are missing on the page!'
         );
 
         $matched = false;
@@ -43,7 +43,7 @@ trait SonataAdminFlashMessagesTrait
         }
         $this->assertTrue(
             $matched,
-            'Успешные флэш-сообщения не содержат текст "'.$message.'".'
+            'Successful flash messages do not contain text: "'.$message.'".'
         );
     }
 
@@ -62,7 +62,7 @@ trait SonataAdminFlashMessagesTrait
         $this->assertGreaterThan(
             0,
             $nodes->count(),
-            'Сообщения c ошибками отсутствуют на странице!'
+            'There are no error messages on the page!'
         );
 
         $matched = false;
@@ -73,7 +73,7 @@ trait SonataAdminFlashMessagesTrait
         }
         $this->assertTrue(
             $matched,
-            'Неуспешные флэш-сообщения не содержат текст "'.$error.'".'
+            'Unsuccessful flash messages do not contain text: "'.$error.'".'
         );
     }
 
