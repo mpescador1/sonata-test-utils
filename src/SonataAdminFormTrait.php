@@ -70,7 +70,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'Значение в поле ввода "%s" не соответствует ожидаемому',
+            'The value in the input field "%s" does not match what is expected',
             $label
         );
 
@@ -100,7 +100,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'Значение в поле ввода "%s" не соответствует ожидаемому',
+            'The value in the input field "%s" does not match what is expected',
             $label
         );
 
@@ -126,7 +126,7 @@ trait SonataAdminFormTrait
     protected function assertFormTextFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Title field not found "%s"',
+            'Title field "%s" not found ',
             $label
         );
 
@@ -140,8 +140,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что содержимое числового поля ввода, найденное по заголовку,
-     * присутствует на форме.
+     * Checks that the content of a numeric input field found by title is
+     * is present on the form.
      *
      * @param string  $label
      * @param Crawler $form
@@ -149,7 +149,7 @@ trait SonataAdminFormTrait
     protected function assertFormNumberFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+             'Title field "%s" not found ',
             $label
         );
 
@@ -163,8 +163,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что содержимое поле ввода, найденное по заголовку,
-     * присутствует на форме.
+     * Checks that the content of an input field found by title is
+     * is present on the form.
      *
      * @param string  $label
      * @param Crawler $form
@@ -172,7 +172,7 @@ trait SonataAdminFormTrait
     protected function assertFormTextareaFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+             'Title field "%s" not found ',
             $label
         );
 
@@ -186,7 +186,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что заданное поле в виде checkbox существует на форме.
+     * Checks that the specified checkbox field exists on the form.
      *
      * @param string  $label
      * @param Crawler $form
@@ -194,7 +194,7 @@ trait SonataAdminFormTrait
     protected function assertFormCheckboxFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+             'Title field "%s" not found ',
             $label
         );
 
@@ -208,8 +208,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что заданное поле в виде checkbox существует на форме и
-     * находится во включенном состоянии.
+     * Checks that the given checkbox field exists on the form and
+     * is on.
      *
      * @param string  $label
      * @param Crawler $form
@@ -219,7 +219,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+            'Title field "%s" not found ',
             $label
         );
 
@@ -234,7 +234,7 @@ trait SonataAdminFormTrait
         );
 
         $checkedMessage = sprintf(
-            'Поле с заголовком "%s" не установлено во включенное состояние',
+            'Field with header "%s" is not set to enabled',
             $label
         );
 
@@ -245,8 +245,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что заданное поле в виде checkbox существует на форме и
-     * находится в выключенном состоянии.
+     * Checks that the given checkbox field exists on the form and
+     * is off.
      *
      * @param string  $label
      * @param Crawler $form
@@ -256,7 +256,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+            'Title field "%s" not found ',
             $label
         );
 
@@ -271,7 +271,7 @@ trait SonataAdminFormTrait
         );
 
         $checkedMessage = sprintf(
-            'Поле с заголовком "%s" не в выключенном состоянии',
+            'Field with title "%s" not disabled',
             $label
         );
 
@@ -282,15 +282,15 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что файловое поле с данным заголовком существует в форме.
+     * Checks that a file field with the given header exists on the form.
      *
-     * @param string  $label наименование поля
-     * @param Crawler $form  ссылка на краулер по форме
+     * @param string  $label field name
+     * @param Crawler $form  link to crawler by form
      */
     protected function assertFileFormFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено файловое поле с заголовком "%s"',
+            'File field with title "%s" not found ',
             $label
         );
 
@@ -304,11 +304,11 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что списковое поле имеет ожидаемое значение.
+     * Checks that the list box has the expected value.
      *
-     * @param string  $expectedValue ожидаемое значение
-     * @param string  $label         наименование поля
-     * @param Crawler $form          ссылка на краулер по форме
+     * @param string  $expectedValue expected value
+     * @param string  $label         field name
+     * @param Crawler $form          link to crawler by form
      */
     protected function assertSelectFormFieldValueEquals(
         string $expectedValue,
@@ -339,15 +339,15 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что списковое поле с данным заголовком существует в форме.
+     * Checks that a list box with the given title exists on the form.
      *
-     * @param string  $label наименование поля
-     * @param Crawler $form  ссылка на краулер по форме
+     * @param string  $label field name
+     * @param Crawler $form  link to crawler by form
      */
     protected function assertSelectFormFieldExists(string $label, Crawler $form)
     {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+            'Title field "%s" not found ',
             $label
         );
 
@@ -361,8 +361,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что значение в списковом поле с данным заголовком существует
-     * в форме.
+     * Checks that the value in the list box with the given title exists
+     * in the shape of.
      *
      * @param string  $selectLabel наименование поля
      * @param string  $optionTitle заголовок значения
@@ -392,18 +392,18 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что поле множественного выбора с автокомплитом с данным
-     * заголовком существует в форме.
+     * Checks that an autocomplete multiple choice field with the given
+     * heading exists in the form.
      *
-     * @param string  $label наименование поля
-     * @param Crawler $form  ссылка на краулер по форме
+     * @param string  $label field name
+     * @param Crawler $form  link to crawler by form
      */
     protected function assertMultipleSelectFormFieldWithAutocompleteExists(
         string $label,
         Crawler $form
     ) {
         $message = sprintf(
-            'Не найдено поле с заголовком "%s"',
+            'Title field "%s" not found ',
             $label
         );
 
@@ -417,12 +417,12 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что поле множественного выбора с автокомплитом имеет
-     * ожидаемые значения и не имеет лишних значений.
+     * Checks that an autocomplete multiple choice field has
+     * expected values and not superfluous.
      *
-     * @param string[] $expectedValues ожидаемые значения
-     * @param string   $label          наименование поля
-     * @param Crawler  $form           ссылка на краулер по форме
+     * @param string[] $expectedValues expected values
+     * @param string   $label          field name
+     * @param Crawler  $form           link to crawler by form
      */
     protected function assertMultipleSelectFormFieldWithAutocompleteValueEquals(
         array $expectedValues,
@@ -430,7 +430,7 @@ trait SonataAdminFormTrait
         Crawler $form
     ) {
         $message = sprintf(
-            'В поле с заголовком "%s" ',
+            'In the title box "%s" ',
             $label
         );
 
@@ -445,19 +445,19 @@ trait SonataAdminFormTrait
         $additionalMessages = [];
         if (!empty($notFound)) {
             $additionalMessages[] = sprintf(
-                'не найдены значения %s',
+                'no values %s found ',
                 $this->formatArrayValues($notFound)
             );
         }
 
         if (!empty($extraFound)) {
             $additionalMessages[] = sprintf(
-                'найдены лишние значения %s',
+                'extra values %s found',
                 $this->formatArrayValues($extraFound)
             );
         }
 
-        $message .= implode(' и ', $additionalMessages);
+        $message .= implode(' and ', $additionalMessages);
 
         $this->assertTrue(
             empty($notFound) && empty($extraFound),
@@ -466,8 +466,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Проверяет, что на странице создания/редактирования
-     * отсутствует кнопка, соответствующая переданному действию.
+     * Checks that on the create / edit page
+     * there is no button corresponding to the passed action.
      *
      * @param string  $actionTitle
      * @param Crawler $crawler
@@ -481,13 +481,13 @@ trait SonataAdminFormTrait
         $this->assertCount(
             0,
             $crawler->filterXPath($actionButtonXPath),
-            "На форме есть кнопка '$actionTitle'"
+            "There is a button '$actionTitle' on the form "
         );
     }
 
     /**
-     * Проверяет, что на странице создания/редактирования
-     * присутствует кнопка, соответствующая переданному действию.
+     * Checks that on the create / edit page
+     * there is a button corresponding to the passed action.
      *
      * @param string  $actionTitle
      * @param Crawler $crawler
@@ -501,12 +501,12 @@ trait SonataAdminFormTrait
         $this->assertCount(
             1,
             $crawler->filterXPath($actionButtonXPath),
-            "На форме нет кнопки '$actionTitle'"
+            "There is no button '$actionTitle' on the form "
         );
     }
 
     /**
-     * Проверяет есть ли заданая ошибка для элемента формы с определенным лэйблом.
+     * Checks if there is a given error for a form element with a specific label.
      *
      * @param string  $label   лэйбл для поиска элемента формы
      * @param string  $error   ожидаемая строка ошибки
@@ -527,18 +527,18 @@ trait SonataAdminFormTrait
         $this->assertCount(
             1,
             $errorsContainer,
-            'Не удалось однозначно найти такое поле с ошибками'
+            'Could not uniquely find such a field with errors'
         );
 
         $this->assertStringContainsString(
             $error,
             $errorsContainer->text(),
-            'Ошибка не равна ожидаемой'
+            'The error is not equal to the expected'
         );
     }
 
     /**
-     * Возвращает XPath-путь к флажковому полю формы с заданным заголовком.
+     * Returns XPath path to the checkbox with the given title.
      *
      * @param string $label
      *
@@ -554,9 +554,9 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает путь для получения файлового поля по его названию.
+     * Returns the path to get the file field by its name.
      *
-     * @param string $label название (лейбл)
+     * @param string $label name (label)
      *
      * @return string
      */
@@ -570,8 +570,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к опции в списковом поле с заданными заголовками
-     * поля и значения.
+     * Returns the XPath path to the option in the list box with the given titles
+     * fields and values.
      *
      * @param string $selectLabel
      * @param string $optionTitle
@@ -587,7 +587,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к списковому полю формы с заданным заголовком.
+     * Returns the XPath path to the list box of the form with the given title.
      *
      * @param string $label
      *
@@ -603,8 +603,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к поле множественного выбора с автокомплитом с
-     * заданным заголовком.
+     * Returns the XPath path to an autocompleted multiple choice field with
+     * by the given title.
      *
      * @param string $label
      *
@@ -617,13 +617,13 @@ trait SonataAdminFormTrait
         $inputContainerXPath = "div[contains(@class, 'sonata-ba-field')]";
         $inputXPath = 'select';
 
-        // Ищем такой путь, потому что соната не помечает явным образом
-        // select с автокомплитом.
+        // Look for this way, because the sonata does not explicitly mark
+        // select with autocomplete.
         return "$labelXPath/following-sibling::$inputContainerXPath//$inputXPath";
     }
 
     /**
-     * Возвращает XPath-путь к заданному заголовку поля формы.
+     * Returns the XPath path to the specified title of the form field.
      *
      * @param string $label
      *
@@ -638,7 +638,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к полю формы с заданным заголовком.
+     * Returns the XPath path to the form field with the given title.
      *
      * @param string $label
      *
@@ -654,7 +654,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к числовому полю формы с заданным заголовком.
+     * Returns the XPath path to the numeric form field with the given title.
      *
      * @param string $label
      *
@@ -670,7 +670,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к полю формы с заданным заголовком.
+     * Returns the XPath path to the form field with the given title.
      *
      * @param string $label
      *
@@ -686,7 +686,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает XPath-путь к кнопке действий над формой с заданным текстом.
+     * Returns the XPath path to the form action button with the specified text.
      *
      * @param string $buttonText
      *
@@ -702,8 +702,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает содержимое поля формы с заданным заголовком без начальных,
-     * конечных и повторяющихся пробелов.
+     * Returns the contents of a form field with a given title without leading,
+     * trailing and repeating spaces.
      *
      * @param string  $label
      * @param Crawler $form
@@ -720,8 +720,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает содержимое числового поля формы с заданным заголовком без
-     * начальных, конечных и повторяющихся пробелов.
+     * Returns the content of a numeric form field with a given title without
+     * leading, trailing and repeating spaces.
      *
      * @param string  $label
      * @param Crawler $form
@@ -738,8 +738,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Возвращает содержимое поля формы с заданным заголовком без начальных,
-     * конечных и повторяющихся пробелов.
+     * Returns the contents of a form field with a given title without leading,
+     * trailing and repeating spaces.
      *
      * @param string  $label
      * @param Crawler $form
@@ -756,8 +756,8 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Получает кролер для таблицы по ее названию
-     * (актуально для страницы редактирования-создания в админке).
+     * Gets a crawler for a table by its name
+     * (relevant for the edit-create page in the admin panel).
      *
      * @param Crawler $form  родительская форма
      * @param string  $title заголовок таблицы
@@ -773,7 +773,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Получает значение выбранного элемента выпадающего списка.
+     * Gets the value of the selected item in the dropdown list.
      *
      * @param Crawler $selectElement корневым элементом должен быть select
      *
@@ -787,7 +787,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Получает список значений выбранных элементов выпадающего списка.
+     * Gets a list of the values of the selected items in the dropdown list.
      *
      * @param Crawler $selectElement корневым элементом должен быть select
      *
@@ -808,7 +808,7 @@ trait SonataAdminFormTrait
     }
 
     /**
-     * Форматирует значения массива для удобного отображения в тексте ошибки.
+     * Formats array values for easy display in error text.
      *
      * @param array $data
      *
