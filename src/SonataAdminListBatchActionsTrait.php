@@ -5,9 +5,9 @@ namespace AveSystems\SonataTestUtils;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Нужен для упрощения проверки наличия пунктов в меню для массовых действий
- * со строками на странице списка, оформленных в стиле "SonataAdminBundle".
- * Должен использоваться в тестах, наследованных от "TestCase".
+ * It is needed to simplify the check for the presence of items in the menu for bulk actions
+ * with lines on the list page, styled in the "SonataAdminBundle" style.
+ * Must be used in tests inherited from "TestCase".
  *
  * @method void assertCount(int $expectedCount, $haystack, string $message = '')
  *
@@ -16,8 +16,8 @@ use Symfony\Component\DomCrawler\Crawler;
 trait SonataAdminListBatchActionsTrait
 {
     /**
-     * Проверяет, что на странице списка присутствует кнопка, соответствующая
-     * переданному групповому действию.
+     * Checks that the list page contains a button corresponding to
+     * transferred to the group action.
      *
      * @param string       $actionTitle
      * @param Crawler|null $crawler
@@ -33,13 +33,13 @@ trait SonataAdminListBatchActionsTrait
         $this->assertCount(
             0,
             $crawler->filterXPath($deleteBatchActionXPath),
-            sprintf('На странице есть действие "%s"', $actionTitle)
+            sprintf('There is an action on the page "%s"', $actionTitle)
         );
     }
 
     /**
-     * Возвращает XPath, соответствующий групповому действию на стандартной
-     * странице списка Sonata Admin.
+     * Returns an XPath corresponding to a group action on a standard
+     * Sonata Admin list page.
      *
      * @param string $actionTitle
      *
