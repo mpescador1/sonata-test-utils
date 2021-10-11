@@ -5,9 +5,9 @@ namespace AveSystems\SonataTestUtils;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Нужен для упрощения проверки наличия пунктов меню,
- * оформленных в стиле "SonataAdminBundle".
- * Должен использоваться в тестах, наследованных от "TestCase".
+ * It is needed to make it easier to check for the presence of menu items,
+ * designed in the "SonataAdminBundle" style.
+ * Must be used in tests inherited from "TestCase".
  *
  * @method void assertCount(int $expectedCount, $haystack, string $message = '')
  *
@@ -32,7 +32,7 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Проверяет, что список меню отсутствует на странице.
+     * Checks that the menu list is not present on the page.
      *
      * @param Crawler $crawler
      */
@@ -48,7 +48,7 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Проверяет, что пункт с заданным названием в списке меню.
+     * Checks that the item with the given name is in the menu list.
      *
      * @param Crawler $crawler
      * @param string  $menuItem название пункта меню
@@ -63,12 +63,12 @@ trait SonataAdminMenuTrait
         $this->assertCount(
             1,
             $crawler->filterXPath($xpath),
-            sprintf('В меню нет пункта "%s"', $menuItem)
+            sprintf('There is no "%s" item in the menu', $menuItem)
         );
     }
 
     /**
-     * Проверяет, что пункт с заданным названием в списке меню.
+     * Checks that the item with the given name is in the menu list.
      *
      * @param Crawler $crawler
      * @param string  $menuItem название пункта меню
@@ -90,8 +90,8 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Проверяет, что пункт с заданным названием есть в определённой группе
-     * меню.
+     * Checks that the item with the given name is in the specified group
+     * menu.
      *
      * @param Crawler $crawler
      * @param string  $menuItem  название пункта меню
@@ -112,8 +112,8 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Проверяет, что пункта с заданным названием нет в определённой группе
-     * меню.
+     * Checks that the item with the given name is not in the specified group
+     * menu.
      *
      * @param Crawler $crawler
      * @param string  $menuItem  название пункта меню
@@ -134,18 +134,18 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Проверяет, что названия пунктов меню и иерархия соответствуют
-     * переданному значению.
+     * Checks that menu item names and hierarchy match
+     * passed value.
      *
      * @param Crawler $crawler
      * @param array   $expectedMenuHierarchyLabels
      *
      * @example [
-     *   'Управленческий совет' => [
-     *     'Информация о заседаниях',
-     *     'Представители учредителя',
+     *   'Management Board' => [
+     *     'Meeting information',
+     *     'Founder's representatives',
      *   ],
-     *   'Справки директоров',
+     *   'Director certificates',
      * ]
      */
     protected function assertMenuItemsEqual(
@@ -184,7 +184,7 @@ trait SonataAdminMenuTrait
         $this->assertEquals(
             $expectedOrderedKeys,
             $actualOrderedKeys,
-            'Не совпадает порядок пунктов меню'
+            'Menu item order does not match'
         );
     }
 
@@ -208,7 +208,7 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Возвращает XPath-путь к меню SonataAdminBundle.
+     * Returns the XPath path to the SonataAdminBundle menu.
      *
      * @return string
      */
@@ -218,7 +218,8 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Возвращает XPath-путь к группе меню SonataAdminBundle по названию.
+     * Returns the XPath path to the SonataAdminBundle menu group by name.
+
      *
      * @param string $menuGroup
      *
@@ -230,7 +231,7 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Возвращает XPath-путь к меню группы  по названию в меню
+     * Returns the XPath path to the menu of the group by name in the menu
      * SonataAdminBundle.
      *
      * @param string $menuGroup
@@ -245,7 +246,7 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Возвращает XPath-путь к пункту меню SonataAdminBundle по названию.
+     * Returns the XPath path to the SonataAdminBundle menu item by name.
      *
      * @param string $menuItem название пункта меню
      *
@@ -257,18 +258,18 @@ trait SonataAdminMenuTrait
     }
 
     /**
-     * Обходит меню и возвращает названия пунктов в соответствии с иерархией.
+     * Traverses the menu and returns the item names according to the hierarchy.
      *
      * @param Crawler $menu
      *
      * @return string[]
      *
      * @example [
-     *   'Управленческий совет' => [
-     *     'Информация о заседаниях',
-     *     'Представители учредителя',
+     *   'Management Board' => [
+     *     'Meeting information',
+     *     'Founder's representatives',
      *   ],
-     *   'Справки директоров',
+     *   'Director certificates',
      * ]
      */
     private function retrieveMenuLabels(Crawler $menu): array
